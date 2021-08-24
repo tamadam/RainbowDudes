@@ -16,9 +16,9 @@ public class AddPlayerControlledVelocity : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(keyPositive))  
-            GetComponent<Rigidbody>().velocity = 1;
+            GetComponent<Rigidbody>().velocity += v3Force;
 
         if (Input.GetKey(keyNegative))
-            GetComponent<Rigidbody>().velocity = -1;
+            GetComponent<Rigidbody>().velocity -= v3Force;
     }
 }
