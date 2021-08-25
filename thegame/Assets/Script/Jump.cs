@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public Vector3 jump;
-    public float jumpForce = 2.0f;
-    public bool isGrounded;
+    [SerializeField]
+    float jumpForce;
+    Vector3 jump;
+    bool isGrounded;
     Rigidbody rb;
+
     void Start(){
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
+        isGrounded = false;
     }
 
-    void OnCollisionStay(){
+    void OnCollisionEnter(){
         isGrounded = true;
     }
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
-
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
     }
 }
