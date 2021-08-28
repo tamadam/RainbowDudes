@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    /*
     [SerializeField]
     float jumpForce;
     Vector3 jump;
@@ -25,5 +26,35 @@ public class Jump : MonoBehaviour
             isGrounded = false;
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
+    }
+    */
+
+    private Rigidbody rb;
+
+    public LayerMask groundLayers;
+
+    public float jumpForce = 7;
+
+    public SphereCollider col;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<SphereCollider>();
+    }
+
+    void Update()
+    {
+        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x,
+            col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
+
     }
 }
