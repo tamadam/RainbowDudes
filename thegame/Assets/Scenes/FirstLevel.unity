@@ -6314,9 +6314,8 @@ GameObject:
   - component: {fileID: 1546956005}
   - component: {fileID: 1546956004}
   - component: {fileID: 1546956003}
-  - component: {fileID: 1546956009}
-  m_Layer: 0
-  m_Name: SphereManual
+  m_Layer: 6
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6346,15 +6345,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1546956001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b3a26ec97298fe4aaaedf2be36c749a, type: 3}
+  m_Script: {fileID: 11500000, guid: f49bd66b5214fb14bacd3a69159ea1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperObject: {fileID: 1430582464}
-  speed: 0.03
-  keyForward: 273
-  keyBackward: 274
-  keyLeft: 276
-  keyRight: 275
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  jumpForce: 5
+  speed: 0.9
+  col: {fileID: 0}
 --- !u!54 &1546956004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6433,19 +6432,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546956001}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1546956009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546956001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea977113d81477747a521eecf25c56c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 3.5
 --- !u!1 &1548411940
 GameObject:
   m_ObjectHideFlags: 0
