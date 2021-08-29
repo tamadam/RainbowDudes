@@ -8,7 +8,7 @@ public class PlayerControll : MonoBehaviour
 
     public LayerMask groundLayers;
 
-    public float jumpForce = 7;
+    public float jumpForce = 5;
 
     public float speed = 0.9f;
 
