@@ -7,6 +7,9 @@ public class CopyPosition : MonoBehaviour
     [SerializeField]
     Transform target;
 
+
+
+
     void Update()
     {
         GetComponent<Transform>().position = target.position;
