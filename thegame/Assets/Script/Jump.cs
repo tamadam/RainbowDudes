@@ -31,11 +31,13 @@ public class Jump : MonoBehaviour
 
     private Rigidbody rb;
 
+    public KeyCode key;
+
     public LayerMask groundLayers;
 
     public float jumpForce = 7;
 
-    public SphereCollider col;
+    SphereCollider col;
 
     void Start()
     {
@@ -45,7 +47,7 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if(IsGrounded() && Input.GetKeyDown(key))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }

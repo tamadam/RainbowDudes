@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddPlayerControlledVelocity : MonoBehaviour
 {
-    /*
+    
     [SerializeField]
     Transform helperObject;
 
@@ -34,8 +34,8 @@ public class AddPlayerControlledVelocity : MonoBehaviour
         if (Input.GetKey(keyRight))  
             GetComponent<Rigidbody>().velocity += helperObject.right * speed;
     }
-    */
-    public float speed = 2;
+    
+    /*public float speed = 2;
 
     private Rigidbody rb;
 
@@ -52,5 +52,5 @@ public class AddPlayerControlledVelocity : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
 
         rb.AddForce(movement * speed);
-    }
+    }*/
 }
